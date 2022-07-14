@@ -1,6 +1,6 @@
 FROM node:17-alpine
 
-RUN npm install pm2 -g
+# RUN npm install pm2 -g
 
 WORKDIR /app
 
@@ -14,4 +14,4 @@ EXPOSE 5000
 
 ENV NODE_ENV=production
 
-CMD [ "pm2-runtime", "app.js" ]
+CMD [ "node", "app" ]
