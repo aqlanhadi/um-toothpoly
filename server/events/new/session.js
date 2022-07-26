@@ -109,6 +109,8 @@ module.exports = (socket, client) => {
     client.on('session:initiateGame', () => {
         let room = getRoom(client.id)
 
+        if (!room) return
+
         room.disableGame = true
         room.scene = 'game'
         room.turn = 0
